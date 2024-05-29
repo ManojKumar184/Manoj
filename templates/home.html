@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<h1>Simple Calculator</h1>
+<form action="{% url 'calculate' %}" method="get">
+    <input type="number" name="num1" placeholder="Enter first number" required><br>
+    <input type="number" name="num2" placeholder="Enter second number" required><br>
+    <select name="operation">
+        <option value="add">Add</option>
+        <option value="sub">Subtract</option>
+        <option value="mul">Multiply</option>
+        <option value="div">Divide</option>
+    </select><br>
+    <button type="submit">Calculate</button>
+</form>
+
+<h1>Calculation Result</h1>
+    <p>The result is: {{ result }}</p>
+
+{% endblock %}
